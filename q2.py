@@ -121,9 +121,6 @@ if __name__ == '__main__':
     );
     """)
 
-
-
-
     mydb.commit()
     cursor.close()
     mydb.close()
