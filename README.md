@@ -1,6 +1,7 @@
 # DBS-ex2
 In this assignment, we design and query a SQL database for the fictional O’donald’s Burgers fast food chain. The task involves three parts: constructing and populating the database with tables and sample data, performing business analysis using advanced SQL queries, and modifying the database schema to support cost evaluation of meals. Each query is implemented in a separate Python script with embedded SQL and proper documentation.
 
+# Part 1: Database Construction
 ## Questions 1,2:
 Creating the database and tables inside of it. This is a screenshot of the tables it created, since no output is returned indicating success (only upon failure).
 ![image](https://github.com/user-attachments/assets/0f505c4e-a603-470a-b24a-cc91534e3c4f)
@@ -11,4 +12,18 @@ Creating the database and tables inside of it. This is a screenshot of the table
 # Question 3:
 Inserting rows into all 9 tables.
 ![image](https://github.com/user-attachments/assets/fa443653-2fb8-4df6-922b-37440bda8f8b)
+
+# Part 2: - Advanced Data Analysis
+
+## Question 4: Business Analysis- Meal Type By City
+Your first analysis task is to create a report on how the popularity of the different meal types
+(breakfast-morning, regular- all day) is distributed across the cities.
+Write a query that will return a table of cities, and for each city- total of
+1. breakfasts
+2. regular meals
+The cities should appear in an alphabetical order.
+
+- Result: ```('MIA', Decimal('1'), Decimal('4')), ('NYC', Decimal('1'), Decimal('2')), ('SF', Decimal('4'), Decimal('1'))```  
+
+
 
