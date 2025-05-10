@@ -17,6 +17,7 @@ if __name__ == '__main__':
        JOIN menu_item i ON mi.item_id = i.item_id
        GROUP BY m.meal_id, m.meal_name, m.price
        HAVING m.price >= SUM(i.price);
-       """)
+           """)
+
 
     print(', '.join(str(row) for row in cursor.fetchall()))
