@@ -11,12 +11,12 @@ if __name__ == '__main__':
     cursor = mydb.cursor()
 
     cursor.execute("""
-       SELECT m.meal_name
-       FROM menu_meal m
-       JOIN meal_item mi ON m.meal_id = mi.meal_id
-       JOIN menu_item i ON mi.item_id = i.item_id
-       GROUP BY m.meal_id, m.meal_name, m.price
-       HAVING m.price >= SUM(i.price);
+       SELECT menu_meal.meal_name
+       FROM menu_meal 
+       JOIN meal_item ON menu_meal.meal_id = meal_item.meal_id
+       JOIN menu_item i ON meal_item.item_id = i.item_id
+       GROUP BY menu_meal.meal_id, menu_meal.meal_name, menu_meal.price
+       HAVING menu_meal.price >= SUM(i.price);
            """)
 
 

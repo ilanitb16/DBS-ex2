@@ -9,11 +9,15 @@ if __name__ == '__main__':
         port=3306,
     )
     cursor = mydb.cursor()
+
+    # View meals (is_meal = 1) from order_item
+    # Connect the ordered meal to the person who ordered it and where they live
+
     cursor.execute("""
         SELECT
             city.city_name,
             SUM(CASE WHEN menu_meal.served_at = 'morning' THEN 1 ELSE 0 END) AS breakfast_count,
-            SUM(CASE WHEN menu_meal.served_at = 'all day' THEN 1 ELSE 0 END) AS regular_count
+            SUM(CASE WHEN menu_meal.served_at = 'all day' THEN 1 ELSE 0 END) AS regular_meals_count
         FROM
             order_item
         JOIN full_order ON order_item.order_id = full_order.order_id

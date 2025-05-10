@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
     # alter the menu_meal table such that it will include an integer raw_cost
     # column, which will store the accumulative cost of all items in the meal.
+
     cursor.execute("""
     ALTER TABLE menu_meal
     ADD COLUMN raw_cost INT;

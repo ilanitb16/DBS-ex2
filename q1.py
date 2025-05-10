@@ -8,6 +8,9 @@ if __name__ == '__main__':
         port=3306
     )
     cursor = mydb.cursor()
+    #  Used the first format but removed the line database="burgers" from connector
+    #  because upon creating the DB we don't have a name for it yet because it does not exist.
+
     cursor.execute("""
     CREATE DATABASE burgers;
     """)

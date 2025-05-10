@@ -12,16 +12,18 @@ if __name__ == '__main__':
 
     # small Onuggets meal: id = 4
     cursor.execute("""
-    UPDATE menu_meal as m
-    JOIN (
-        SELECT mi.meal_id, SUM(i.price) AS total_price
-        FROM meal_item mi
-        JOIN menu_item i ON mi.item_id = i.item_id
-        GROUP BY mi.meal_id
-    ) AS price_table ON m.meal_id = price_table.meal_id
-    SET m.raw_cost = price_table.total_price
-    WHERE m.meal_id = 4;
-    """)
+        UPDATE menu_meal
+        JOIN (
+           SELECT meal_item.meal_id, SUM(menu_item.price) AS total_price
+           FROM meal_item
+           JOIN menu_item ON meal_item.item_id = menu_item.item_id
+           GROUP BY meal_item.meal_id
+        ) AS price_table ON menu_meal.meal_id = price_table.meal_id
+        SET menu_meal.raw_cost = price_table.total_price
+        WHERE menu_meal.meal_id = 4;
+        """)
+
+    # calculating the sum of item prices for id = 3, and saving the sam in raw_cost.
 
     mydb.commit()
     cursor.close()
