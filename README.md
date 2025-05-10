@@ -33,4 +33,11 @@ The cities should appear in an alphabetical order.
 ### Question 5_2:
 - Result: ``````
 
+### Uestion 5_3:
+- Result: ```('chicken Oburger meal',), ('small Onuggets meal',)```
+  
+## Question 6:
+Alter the menu_meal table such that it will include an integer raw_cost column, which will store the accumulative cost of all items in the meal. Screenshot of the update:
+![image](https://github.com/user-attachments/assets/f772b277-8ed4-4def-ac02-5eaaac67ba95)
+
 
